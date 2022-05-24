@@ -1,0 +1,3 @@
+[submodule "cpp/SEAL"]
+	path = cpp/SEAL
+	url = https://github.com/microsoft/SEAL.git

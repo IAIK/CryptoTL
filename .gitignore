@@ -1,0 +1,11 @@
+.vscode
+*/build/*
+*/bin/*
+out
+*.out
+*.in
+lower_model
+upper_model
+he_out.csv
+he_out_train.csv
+he_out_test.csv
