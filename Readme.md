@@ -2,7 +2,7 @@
 
 This repository contains the source code of the paper CryptoTL: Private, efficient and secure transfer learning [1].
 
-[1] Not yet public.
+[1] [https://arxiv.org/pdf/2205.11935.pdf](https://arxiv.org/pdf/2205.11935.pdf)
 
 ## Python Requirements
 
@@ -34,7 +34,7 @@ cmake -DSEAL_USE_INTEL_HEXL=On .. # replace with the following to use Clang: CC=
 
 ## Datasets
 
-The (preprocessed) datasets we used in our experiments are attached to Github releases, please download and extract them into the `datasets` folder.
+The (preprocessed) datasets we used in our experiments are attached to Github releases (e.g., [here](https://github.com/IAIK/CryptoTL/releases/tag/v1.0.0)), please download and extract them into the `datasets` folder.
 
 | Dataset                                     |
 |---------------------------------------------|
@@ -130,4 +130,23 @@ Example:
 ```bash
 python3 python/tl_plain.py -e 300 -s 10 -d ./datasets/IMDB-train-SBERT.csv -t ./datasets/Twitter-train-SBERT.csv -l ./datasets/Twitter-test-SBERT.csv # training
 python3 python/tl_plain.py -l ./datasets/Twitter-test-SBERT.csv -m model -c # classify
+```
+
+### Citing our work
+
+Please use the following BibTeX entry to cite our work in academic papers.
+
+```tex
+@article{DBLP:journals/corr/abs-2205-11935,
+  author    = {Roman Walch and
+               Samuel Sousa and
+               Lukas Helminger and
+               Stefanie N. Lindstaedt and
+               Christian Rechberger and
+               Andreas Tr{\"{u}}gler},
+  title     = {CryptoTL: Private, efficient and secure transfer learning},
+  journal   = {CoRR},
+  volume    = {abs/2205.11935},
+  year      = {2022}
+}
 ```
