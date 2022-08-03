@@ -132,6 +132,17 @@ python3 python/tl_plain.py -e 300 -s 10 -d ./datasets/IMDB-train-SBERT.csv -t ./
 python3 python/tl_plain.py -l ./datasets/Twitter-test-SBERT.csv -m model -c # classify
 ```
 
+## Docker
+
+To simplify building (without Intel HEXL) we have prepared a docker file, which installs all dependencies, builds SEAL and downloads the preprocessed datasets. To use it, execute the following commands:
+
+```bash
+docker build -t cryptotl .
+docker run -it cryptotl
+```
+
+Then proceed with the CryptoTL commands stated above. For using Intel HEXL, modify ```Dockerfile``` accordingly.
+
 ### Citing our work
 
 Please use the following BibTeX entry to cite our work in academic papers.
