@@ -11,6 +11,7 @@ import pandas as pd
 PATH = "cpp"
 BUILD_PATH = "cpp/build"
 BINARY = "cpp/bin/main"
+PYTHON = "python3"
 
 MINMAX_SCALER = True
 
@@ -127,7 +128,7 @@ def python_lower(epochs, splits, source_dataset_train, source_dataset_test,
                  lower_model):
     print("Training lower layers...")
     args = [
-        LOWER_SCRIPT, "-e",
+        PYTHON, LOWER_SCRIPT, "-e",
         str(epochs), "-s", splits, "-t", source_dataset_train, "-d",
         source_dataset_test, "-m", lower_model, "-w", SERVER_WEIGHTS_CPP
     ]
@@ -146,7 +147,7 @@ def python_lower(epochs, splits, source_dataset_train, source_dataset_test,
 def python_finetune(epochs, splits, upper_model):
     print("Finetuning upper layers..")
     args = [
-        FINETUNE_SCRIPT, "-e",
+        PYTHON, FINETUNE_SCRIPT, "-e",
         str(epochs), "-t", HE_OUT_CPP_TRAIN, "-d", HE_OUT_CPP_TEST, "-m",
         upper_model, "-s", splits
     ]

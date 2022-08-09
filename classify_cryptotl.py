@@ -9,6 +9,7 @@ import click
 PATH = "cpp"
 BUILD_PATH = "cpp/build"
 BINARY = "cpp/bin/main"
+PYTHON = "python3"
 
 SERVER_WEIGHTS_CPP = "server_weights.in"
 CLIENT_WEIGHTS_CPP = "client_weights.in"
@@ -72,7 +73,7 @@ def run_cpp(accurate_he):
 def python_classify_model(dataset, model):
     print("Classify Python...")
     args = [
-        SCRIPT, "-d", dataset, "-m", model,
+        PYTHON, SCRIPT, "-d", dataset, "-m", model,
         "-i", INPUTS_CPP, "-s", SERVER_WEIGHTS_CPP, "-c",
         CLIENT_WEIGHTS_CPP
     ]
@@ -90,7 +91,7 @@ def python_classify_model(dataset, model):
 def python_classify(dataset, lower_model, upper_model):
     print("Classify Python...")
     args = [
-        SCRIPT, "-d", dataset, "-l", lower_model, "-u",
+        PYTHON, SCRIPT, "-d", dataset, "-l", lower_model, "-u",
         upper_model, "-i", INPUTS_CPP, "-s", SERVER_WEIGHTS_CPP, "-c",
         CLIENT_WEIGHTS_CPP
     ]
