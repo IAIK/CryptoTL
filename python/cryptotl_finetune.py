@@ -114,10 +114,6 @@ def train(train_dataset, epochs, splits):
         x_test = x[test]
         y_test = y[test]
 
-        x_train = x_train.reshape(x_train.shape[0], x_train.shape[1], 1)
-        x_test = x_test.reshape(x_test.shape[0], x_test.shape[1], 1)
-
-
         model = train_upper_network(x_train, y_train, x_test, y_test, epochs)
 
         score = model.evaluate(x_test, y_test, verbose=0)
